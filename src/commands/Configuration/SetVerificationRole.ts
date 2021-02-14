@@ -31,7 +31,7 @@ export default class PingCommand extends Command {
       guildID: message.guild.id,
     });
 
-    if (message.member.hasPermission("MANAGE_GUILD"))
+    if (!message.member.hasPermission("MANAGE_GUILD"))
       return message.util.send(
         "You need to have the `MANAGE_GUILD` permission to run this command"
       );
